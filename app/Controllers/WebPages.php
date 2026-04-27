@@ -6,10 +6,10 @@ class WebPages extends BaseController
 {
     private function layout($page): string
     {
-    return view('parts/begin')
+    return view('layout/begin')
         . view($page)
-        . view('parts/aside')
-        . view('parts/end');
+        . view('layout/aside')
+        . view('layout/end');
     }
     public function home(): string
     {

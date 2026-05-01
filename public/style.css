@@ -1,33 +1,236 @@
-
+/* START */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-header {
-    background-color: darkgreen;
+body {
+    background-color: var(--bg);
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: var(--text);
 }
+/* Colors */
+:root {
+    --primary: #8b5e3c;
+    --primary-dark: #4b3a2f;
+    --accent: #b879ab;
+    --bg: #f1e9df;
+    --border: #e0d6c8;
+    
+    --surface: #fffaf0;
+    --surface-alt: #efe4d1;
+    --surface-hover: #f6f0e8;
+    --text: #3b2f2a;
+    --table-header-bg: #dcdaeb;
+    --table-header-text: hsl(247, 20%, 54%);
+    --table-row-border: #d8d8d8;
+}
+/* Fonts */
+h1 {
+    color: var(--primary-dark);
+    font-size: 28px;
+}
+h2 {
+    font-size: 20px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+p {
+    margin-bottom: 10px;
+}
+/* Layout */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 12px;
+}
+/* Header + Nav */
+header {
+    background-color: var(--primary);
+    color: white;
+}
+header h1 {
+    color: white;
+}
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 nav ul {
     display: flex;
-    gap: 50px;
+    gap: 30px;
     list-style: none;
 }
 nav a {
     text-decoration: none;
     color: white;
+    transition: 0.2s;
 }
-
+nav a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+/* Card system */
+.card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+}
+/* Bevezető szöveg */
+main {
+    max-width: 1000px;
+    margin: 24px auto;
+    background-color: var(--surface);
+    padding: 16px;
+    border-radius: 8px;
+}
+.layout {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+.page-contact, .page-services {
+    display: block;
+}
+main > p {
+    max-width: 850px;
+    margin-bottom: 16px;
+}
+/* Szekció (Megközelíthetőség) */
+main > section {
+    margin-top: 24px;
+    background-color: var(--surface);
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+/* Alcím */
+main section h2 {
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+aside {
+    flex: 1; 
+    min-width: 250px;
+}
+aside section {
+    background-color: var(--surface-alt);
+    margin-bottom: 16px;
+    padding: 12px;
+    border: 1px solid var(--border);
+}
+.cikk{
+    flex: 2;
+}
+.partner ul {
+    list-style: none;    
+}
+.partner li {
+    margin: 5px;
+}
 footer {
-    background-color: grey;
-    color: white;
+    background-color: var(--primary-dark);
     text-align: center;
     padding: 12px;
+}
+footer h2 {
+    color: white;
+}
+article section {
+    margin-top: 16px;
+    padding-left: 24px;
+}
+/* Table - Szolgáltatások */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--surface);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+thead {
+    background-color: var(--table-header-bg); 
+    color: var(--table-header-text);
+}
+thead th {
+    padding: 12px;
+    font-size: 14px;
+    text-align: left;
+}
+th, td {
+    padding: 8px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);    
+}
+tbody tr {
+    border-bottom: 1px solid var(--table-row-border); 
+    transition: 0.3s;
+}
+tbody tr:hover {
+    background-color: var(--surface-hover);
+}
+/* index oszlop */
+tbody th {
+    width: 50px;
+    color: var(--primary);
+}
+.price {
+    white-space: nowrap;
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+.content {
+    font-size: 13px;
+    color: var(--primary-dark);
+    opacity: 0.8;
+}
+/* Iframe - Kapcsolatok */
+iframe {
+    width: 100%;
+    height: 320px;
+    margin-bottom: 16px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+/* Details */
+.detailsIntro {
+    font-style: italic;
+    background-color: var(--surface);
+    padding: 12px;
+    border-left: 4px solid var(--accent);
+    margin-bottom: 12px;
+}
+.details {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.details p {
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--surface);
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    aside {
+        min-width: 100%;
+    }
+    .details {
+        flex-direction: column;
+    }
+
 }

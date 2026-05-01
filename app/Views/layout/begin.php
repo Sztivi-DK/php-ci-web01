@@ -37,4 +37,4 @@
         </div>
     </header>
     
-    <main>
+    <main class="layout">
